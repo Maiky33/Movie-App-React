@@ -1,0 +1,161 @@
+.ContainerNav{  
+    height: 90px;
+    background-color: #17171b;
+    color: #f3f3f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px;
+    border-bottom: 1px #76787b solid;
+}
+
+.ContainerTittle{
+    width: 20%;
+    cursor: pointer;
+}
+
+.ContainerListNav{  
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.listNav{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.listNav li{   
+    cursor: pointer;
+    list-style: none;
+    font-weight: bold;
+    color: #76787b;
+}
+
+.listNav li:hover{
+    color: #f3f3f4;
+}
+
+
+
+.ContainerItemNav{
+    width: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 25px;
+}
+
+
+
+.inputSeach{
+    background-color: #353535;
+    color: #f3f3f4;
+    font-size: 20px;
+    width: 450px;
+    height: 50px;
+    padding: 0px 30px;
+    margin-left: 250px;
+
+    border: none;
+    border-radius: 25px;
+    outline: none;
+}
+
+@media screen and (max-width:1284px) {
+    .inputSeach {
+        width: 350px;       
+    }
+}
+
+@media screen and (max-width:1184px) {
+    .inputSeach {
+        width: 300px;
+    }
+}
+@media screen and (max-width:1116px) {
+    .inputSeach {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width:1003px) {
+    .listNav {
+        display: none;
+    }
+
+    .ContainerListNav {
+        justify-content: flex-end;
+    }
+}
+
+@media screen and (max-width:688px) {
+
+    .inputSeach{    
+        width: 150px;
+    }
+}
+
+@media screen and (max-width:630px) {
+
+    .inputSeach {
+        width: 140px;
+    }
+}
+
+@media screen and (max-width:485px) {
+    
+    .inputSeach{
+        position: relative;
+        right: 90px;
+    }
+}
+
+@media screen and (max-width:452px) {
+    .inputSeach {
+        position: relative;
+        right: 60px;
+    }
+
+}
+
+@media screen and (max-width:419px) {
+    
+    .inputSeach {
+        position: relative;
+        right: 20px;
+    }
+        
+}
+
+
+@media screen and (max-width:379px) {
+    .inputSeach{    
+        width: 130px;
+    }
+}
+@media screen and (max-width:372px) {
+
+    .inputSeach {
+        position: relative;
+        right: 1px;
+    }
+
+}
+
+
+@media screen and (max-width:392px) {
+    .ContainerItemNav{
+        justify-content: end;
+    }
+}
+
+/*clases compartidas*/
+
+/*Cursor*/
+
+.CursorPointer{
+    cursor: pointer;
+}
+
