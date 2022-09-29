@@ -14,20 +14,34 @@ function App() {
   /*UseState Movies*/
   const [Movies, setMovies] = useState([]);
   const [NavigationBar, setNavigationBar] = useState(false)
-  const [Seach, setSeach] = useState('')
+  const [Seach, setSeach] = useState('movie')
 
   /*ResAPi*/
-  const url = 'http://www.omdbapi.com/?apikey=2c56011e&&s=movie';
-  const urls = 'http://www.omdbapi.com/?apikey=2c56011e&'
+  const url = 'http://www.omdbapi.com/?apikey=2c56011e&&s=';
+  
   
   const fetchApi = async (url) => {                             
     const res = await fetch(url);
     const resjson = await res.json(); 
+
+    if (!resjson || !resjson.Search) {
+      return Swal.fire({
+        position: 'center',
+        icon: 'info',
+        title: 'No Movies found',
+        text:'Please Write a valid text',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    }
+
     setMovies(resjson.Search)
   };
 
   useEffect(() => { 
-    fetchApi(url)
+    fetchApi(`${url}${Seach}`)
+    // para ignorar dependencia de algun useEffect si este lo es necesario
+    // eslint-disable-next-line
   },[])
   
 
@@ -39,7 +53,7 @@ function App() {
     setNavigationBar(!NavigationBar)
   }
 
-  const SendUrl = (e) => {
+  const SendUrl = async (e) => {
     e.preventDefault();
     if (!Seach) {  
       return Swal.fire({
@@ -50,9 +64,8 @@ function App() {
         showConfirmButton: false,
         timer: 1500
       })
-    }
-
-    fetchApi(`${urls}&s=${Seach}`)
+    }    
+    fetchApi(`${url}${Seach}`)
 
   }
 
@@ -60,16 +73,16 @@ function App() {
   
   /*Funciones para filtros horror etc*/
   const Moviesurl = () => { 
-    fetchApi(`${urls}&s=movies`)
+    fetchApi(`${url}movies`)
   }
   const Showurl = () => { 
-    fetchApi(`${urls}&s=show`)
+    fetchApi(`${url}show`)
   }
   const Animationurl = () => { 
-    fetchApi(`${urls}&s=animation`)
+    fetchApi(`${url}animation`)
   }
   const Horrorurl = () => { 
-    fetchApi(`${urls}&s=horror`)
+    fetchApi(`${url}horror`)
   }
 
   
@@ -90,9 +103,10 @@ function App() {
         </div>
         <div className='ContainerFlexforGrid'> 
           <div className='ContainerTargetsMovies'>
-            {Movies.map((item ,index) => (  //recorremos la peliculas con un map
-              <ComponentCards key={index} item={item}/>
-            ))
+            {
+              Movies.map((item, index) => (  //recorremos la peliculas con un map
+                <ComponentCards key={index} item={item}/>
+              ))
             }
           </div>
         </div>
