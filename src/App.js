@@ -17,7 +17,7 @@ function App() {
   const [Seach, setSeach] = useState('movie')
 
   /*ResAPi*/
-  const url = 'http://www.omdbapi.com/?apikey=2c56011e&&s=';
+  const url = 'https://www.omdbapi.com/?apikey=2c56011e&&s=';
   
   
   const fetchApi = async (url) => {                             
