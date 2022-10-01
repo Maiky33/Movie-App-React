@@ -22,9 +22,9 @@ function App() {
   
   const fetchApi = async (url) => {                             
     const res = await fetch(url);
-    const resjson = await res.json(); 
+    const resjson = await res.json();  // llamamos la api
 
-    if (!resjson || !resjson.Search) {
+    if (!resjson || !resjson.Search) { // ponemos una condicion (si no existe resjson o no existe resjson.Search nos retorna la alerta de la libreria Swal.fire )
       return Swal.fire({
         position: 'center',
         icon: 'info',
@@ -39,23 +39,23 @@ function App() {
   };
 
   useEffect(() => { 
-    fetchApi(`${url}${Seach}`)
+    fetchApi(`${url}${Seach}`) //llamamos apenas renderiza la funcion fetch api con la condicion de url y seach
     // para ignorar dependencia de algun useEffect si este lo es necesario
     // eslint-disable-next-line
   },[])
   
 
   /*Funciones nav*/
-  const SeachMovie = (e) => {
+  const SeachMovie = (e) => { // funcion para ver el value del input esta la pasamos por parametros a su componente
     setSeach(e.target.value)
   }
   const OpenCloseNav = () => {   //para cambiar el estado de false a true y bicebersa para asi deplegar la barra  dependiendo si es true o false
     setNavigationBar(!NavigationBar)
   }
 
-  const SendUrl = async (e) => {
-    e.preventDefault();
-    if (!Seach) {  
+  const SendUrl = (e) => { // la funcion es para poder enviar el formulario
+    e.preventDefault();// evitamos que haga su funcion por defecto
+    if (!Seach) {  //preguntamos si seach(lo que hay dentro del input) existe, si no existe retornamos la alerta
       return Swal.fire({
         position: 'center',
         icon: 'info',
@@ -65,15 +65,14 @@ function App() {
         timer: 1500
       })
     }    
-    fetchApi(`${url}${Seach}`)
-
+    fetchApi(`${url}${Seach}`)//en caso de que exista el codigo sigue y llamamos la funcion fetch api con la direccion nueva  
   }
 
 
   
   /*Funciones para filtros horror etc*/
-  const Moviesurl = () => { 
-    fetchApi(`${url}movies`)
+  const Moviesurl = () => {  // usamos estas funciones para poder filtrar con los botones un onClick
+    fetchApi(`${url}movies`) // llamamos la funcion con la categoria a filtrar ya que de esta forma funciona la api
   }
   const Showurl = () => { 
     fetchApi(`${url}show`)
