@@ -1,0 +1,105 @@
+.ContainerCardPages{
+    background-color: #494949;
+}
+
+.containerCardPage{
+    height: auto;
+    background-color: #17171b;
+    color: #f3f3f4;
+    margin: 0px 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 70px;
+}
+
+.imagenPosterCarPage{
+    width: 400px;
+    height: 600px;
+    border-radius: 20px;
+}
+
+
+
+.ContainerButton{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+.Button_Exit{
+    background-color: #494949;
+    color: #f3f3f4;
+    width: 150px;
+    height: 50px;
+    font-size: 30px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+.flexInfoImage{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+    gap: 50px;
+}
+
+.flexInfo{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+@media screen and (max-width:1280px) {
+    .imagenPosterCarPage {
+        width: 300px;
+        height: 500px;
+        border-radius: 20px;
+    }
+}
+
+@media screen and (max-width:1188px) {
+    .imagenPosterCarPage {
+        width: 200px;
+        height: 300px;
+        border-radius: 20px;
+    }
+
+    .flexInfoImage {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .ContainerButton {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .containerCardPage {
+        margin: 0px 100px;
+    }
+}
+
+@media screen and (max-width:494px) {
+    .containerCardPage {
+        margin: 0px 0px;
+    }
+}
+
+
+.titleh2{ 
+    font-size: 50px;
+}
+.Fonsizeinfo{   
+    font-size: 20px;
+    color: bisque;
+}

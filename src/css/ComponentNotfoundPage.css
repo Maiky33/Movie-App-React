@@ -1,0 +1,10 @@
+.containerNotfound{ 
+    height: 760px;
+    background-color: #17171b;
+    color: #f3f3f4;
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

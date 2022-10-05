@@ -1,7 +1,9 @@
 import ComponentNav from './Components/ComponentNav'   
 import ComponentCards from './Components/ComponentCards'
 import ComponentNavSeach from './Components/ComponentNavSeach'
-import {useState , useEffect} from 'react'
+import { useState, useEffect } from 'react'
+import {useNavigate} from 'react-router-dom'
+
 
 import Thor from './images/ThorPoster.jpg'
 import Joker from './images/JokerPoster.jpg'
@@ -42,7 +44,7 @@ function App() {
     fetchApi(`${url}${Seach}`) //llamamos apenas renderiza la funcion fetch api con la condicion de url y seach
     // para ignorar dependencia de algun useEffect si este lo es necesario
     // eslint-disable-next-line
-  },[])
+  }, [])
   
 
   /*Funciones nav*/
@@ -69,7 +71,6 @@ function App() {
   }
 
 
-  
   /*Funciones para filtros horror etc*/
   const Moviesurl = () => {  // usamos estas funciones para poder filtrar con los botones un onClick
     fetchApi(`${url}movies`) // llamamos la funcion con la categoria a filtrar ya que de esta forma funciona la api
@@ -85,28 +86,51 @@ function App() {
   }
 
   
+  const navegite = useNavigate();
+  const HandleClick = (item) => {
+    navegite(`/card/${item.imdbID}`) 
+  }
 
+  
+
+  
+  
   return (
     <div>
-      {NavigationBar ? //Usamos operador ternario para poder deplagar barra de busqueda con un estado
-        <ComponentNavSeach OpenCloseNav={OpenCloseNav} SeachMovie={SeachMovie} SendUrl={SendUrl}/>
-        :
-        <ComponentNav OpenCloseNav={OpenCloseNav} Moviesurl={Moviesurl} Showurl={Showurl} Animationurl={Animationurl} Horrorurl={Horrorurl}/>
-      }
+      {NavigationBar ? ( //Usamos operador ternario para poder deplagar barra de busqueda con un estado
+        <ComponentNavSeach
+          OpenCloseNav={OpenCloseNav}
+          SeachMovie={SeachMovie}
+          SendUrl={SendUrl}
+        />
+      ) : (
+        <ComponentNav
+          OpenCloseNav={OpenCloseNav}
+          Moviesurl={Moviesurl}
+          Showurl={Showurl}
+          Animationurl={Animationurl}
+          Horrorurl={Horrorurl}
+        />
+      )}
 
-      <div className='ContainerSections'> 
-        <div className='ImagesPromo'> 
+      <div className="ContainerSections">
+        <div className="ImagesPromo">
           <h2>News Trailers</h2>
-          <img className='ImagePromo' src={Thor} alt='imagen' />
-          <img className='ImagePromo' src={Joker} alt='imagen'/>         
+          <img className="ImagePromo" src={Thor} alt="imagen" />
+          <img className="ImagePromo" src={Joker} alt="imagen" />
         </div>
-        <div className='ContainerFlexforGrid'> 
-          <div className='ContainerTargetsMovies'>
+        <div className="ContainerFlexforGrid">
+          <div className="ContainerTargetsMovies">
+             
             {
-              Movies.map((item, index) => (  //recorremos la peliculas con un map
-                <ComponentCards key={index} item={item}/>
-              ))
-            }
+            
+            Movies.map((item, index) => (//recorremos la peliculas con un map
+              <ComponentCards HandleClick={HandleClick} key={index} item={item} />
+            ))
+  
+            } 
+            
+                
           </div>
         </div>
       </div>
@@ -114,8 +138,4 @@ function App() {
   );
 }
 
-export default App;
-
-
-
-
+export default App;  
