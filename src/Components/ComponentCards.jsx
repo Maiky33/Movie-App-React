@@ -5,7 +5,7 @@ const ComponentCards = ({item ,HandleClick}) =>{
   //pasamos item por parametros para usarlo en el map
 
   
-  return (
+  return (//hacemos un onClick y Pasamos por pareametros la funcion HandleClick con el parametro item 
     <div onClick={()=>HandleClick(item)} className="ContainerCard">
       <img className="imagenPoster" alt="imagen" src={item.Poster} />
       <h2>{item.Title}</h2>

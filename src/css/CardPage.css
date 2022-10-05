@@ -56,16 +56,23 @@
     flex-direction: column;
     gap: 50px;
 }
+.titleh2{ 
+    font-size: 50px;
+}
+.Fonsizeinfo{   
+    font-size: 20px;
+    color: bisque;
+}
 
 @media screen and (max-width:1280px) {
     .imagenPosterCarPage {
-        width: 300px;
-        height: 500px;
+        width: 250px;
+        height: 450px;
         border-radius: 20px;
     }
 }
 
-@media screen and (max-width:1188px) {
+@media screen and (max-width:1244px) {
     .imagenPosterCarPage {
         width: 200px;
         height: 300px;
@@ -82,24 +89,33 @@
         justify-content: center;
     }
 }
-
 @media screen and (max-width:900px) {
     .containerCardPage {
         margin: 0px 100px;
     }
 }
-
 @media screen and (max-width:494px) {
     .containerCardPage {
         margin: 0px 0px;
     }
 }
-
-
-.titleh2{ 
-    font-size: 50px;
+@media screen and (max-width:1376px) {
+    .titleh2 {
+        font-size: 40px;
+    }
 }
-.Fonsizeinfo{   
-    font-size: 20px;
-    color: bisque;
+@media screen and (max-width:1348px) {
+    .flexInfo{
+        gap: 30px;
+    }
+}
+@media screen and (max-width:1248px) {
+    .flexInfo {
+        gap: 10px;
+    }
+}
+@media screen and (max-width:1188px) {
+    .flexInfo {
+        gap: 40px;
+    }
 }

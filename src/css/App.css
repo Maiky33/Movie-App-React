@@ -18,12 +18,12 @@
     flex-direction: column;
     gap: 30px;
     border-right: 1px #f3f3f4 solid;
-    padding: 50px;
+    padding: 50px 100px 0px 0px;
 }
 
 .ImagePromo{
     width: 350px;
-    margin-top: 40px;
+    margin-top:40px;
     border-radius: 15px;
 }
 
@@ -64,6 +64,7 @@
 @media screen and (max-width:850px) {
     .ImagesPromo {
         align-items: center;
+        padding: 50px;
     }
     .ContainerSections {
         display: flex;

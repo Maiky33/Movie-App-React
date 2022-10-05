@@ -13,7 +13,7 @@ root.render(
     <BrowserRouter>
       <Routes>  
         <Route path='/Movie-App-React' element={<App />} />
-        <Route path='/card/:id' element={<CardPage />}/>
+        <Route path='/card/:MovieID' element={<CardPage />}/>
         <Route path='*' element={<ComponentNotfoundPage/>}/>
       </Routes>
     </BrowserRouter>
