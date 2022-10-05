@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Movie-App-React/static/css/main.f738c5ab.css",
-    "main.js": "/Movie-App-React/static/js/main.ba3a69e6.js",
+    "main.css": "/Movie-App-React/static/css/main.0b20b464.css",
+    "main.js": "/Movie-App-React/static/js/main.38dcc9da.js",
     "static/media/JokerPoster.jpg": "/Movie-App-React/static/media/JokerPoster.9b42dee53138d0d092ac.jpg",
     "static/media/ThorPoster.jpg": "/Movie-App-React/static/media/ThorPoster.b14ed9c826e0771f6efa.jpg",
     "index.html": "/Movie-App-React/index.html",
-    "main.f738c5ab.css.map": "/Movie-App-React/static/css/main.f738c5ab.css.map",
-    "main.ba3a69e6.js.map": "/Movie-App-React/static/js/main.ba3a69e6.js.map"
+    "main.0b20b464.css.map": "/Movie-App-React/static/css/main.0b20b464.css.map",
+    "main.38dcc9da.js.map": "/Movie-App-React/static/js/main.38dcc9da.js.map"
   },
   "entrypoints": [
-    "static/css/main.f738c5ab.css",
-    "static/js/main.ba3a69e6.js"
+    "static/css/main.0b20b464.css",
+    "static/js/main.38dcc9da.js"
   ]
 }
